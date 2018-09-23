@@ -216,7 +216,7 @@ ssize_t dvb_ringbuffer_write_user(struct dvb_ringbuffer *rbuf,
 					const u8 __user *buf, size_t len)
 {
 	size_t todo = len;
-	size_t split;
+	size_t split, status;
 	ssize_t oldpwrite = rbuf->pwrite;
 
 	split = (rbuf->pwrite + len > rbuf->size) ?
